@@ -1,0 +1,341 @@
+/* src/styles/main.css */
+
+body {
+  background-image: url("/img/WP.jpg"); /* Updated path */
+  background-color: black;
+  background-size: cover; /* Added from header style, often desired for body too */
+  background-position: center; /* Added from header style */
+  background-attachment: fixed; /* Optional: makes background image stay in place while scrolling */
+  font-family: 'Titillium Web', sans-serif; /* Common font */
+  color: white; /* Default text color for body */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 25px;
+}
+
+h3 {
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+  /* text-align: center; was not in original h3 but common for other headings */
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+header { /* This was used differently across pages. Some used it for the background image, others just for spacing. */
+  /* The main background image is now on the body.
+     If a specific page needs a *different* header background,
+     you can create a more specific class or apply inline styles in React. */
+  /* Example from original, if needed for specific headers:
+  background-image: url('/img/r32ev.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: rgb(77, 33, 33);
+  text-align: center;
+  padding: 100px 0; */
+}
+
+
+/* Navbar styles from style.css, Fstyle.css, Gstyle.css (they were identical) */
+.navbar {
+  overflow: hidden;
+  font-family: 'Titillium Web', sans-serif;
+  /* Bootstrap handles bg-black and navbar-black, but you can add overrides if needed */
+}
+
+.navbar a {
+  /* float: left; Bootstrap handles this better with flex */
+  /* display: flex; Bootstrap nav-link is display: block or inline-block */
+  color: white !important; /* !important to override Bootstrap if needed for nav-link */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+label {
+  color: white;
+  padding: 8px;
+  text-align: center; /* This might make labels too wide, adjust as needed */
+  font-family: 'Titillium Web', sans-serif;
+  display: inline-block; /* Or block, depending on desired layout */
+  margin-bottom: 0.5rem; /* Common practice for spacing */
+}
+
+img {
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%; /* Make images responsive by default */
+  height: auto; /* Maintain aspect ratio */
+}
+
+img:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 5px #888;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 20px 10px; /* Increased padding a bit */
+  margin-top: 30px; /* Add some space above the footer */
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* For block elements like tables or divs */
+}
+
+/* Table styles (td, tr were identical in all files) */
+td,
+th { /* Added th for completeness */
+  text-align: center;
+  padding: 8px; /* Added for better spacing */
+  color: white; /* Ensure table text is white */
+}
+
+tr {
+  text-align: center; /* Usually text-align is set on td/th rather than tr */
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse; /* Optional: for styled borders */
+  /* width: 80%; */ /* Optional: example width */
+}
+
+
+/* Accordion styles from style.css */
+/* Bootstrap 5 uses CSS variables for accordion.
+   These override the button's text and background color when it's not active and active.
+   The original CSS was for Bootstrap 4.
+   For Bootstrap 5, you might want to adjust these if the default dark theme doesn't fit.
+*/
+.accordion-button {
+  color: white !important; /* Text color of the button */
+  background-color: #333 !important; /* Background of the button */
+}
+.accordion-button:not(.collapsed) {
+  color: white !important; /* Text color when open */
+  background-color: #555 !important; /* Background when open */
+}
+.accordion-button:focus {
+  box-shadow: none !important; /* Remove default focus shadow if desired */
+}
+.accordion-body {
+    background-color: #222; /* Background of the content area */
+    color: white;
+}
+.card { /* From original home.html accordion structure if still using card wrappers */
+    background-color: transparent; /* Make cards transparent if Bootstrap adds a background */
+    border: 1px solid #444; /* Example border */
+}
+.card-header {
+    background-color: #303030; /* Example header */
+    border-bottom: 1px solid #444;
+}
+
+
+/* Input field focus effect from style.css */
+input[type=text],
+input[type=email], /* Added for consistency */
+textarea { /* Added for consistency */
+  transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  /* width: auto; /* Default width, let specific component styles handle it if needed */
+}
+
+input[type=text]:focus,
+input[type=email]:focus, /* Added for consistency */
+textarea:focus { /* Added for consistency */
+  /* width: 18%; /* This is very specific, might be better to use a class or larger relative unit */
+  background-color: #444;
+  border-color: #777;
+  outline: none; /* Remove default outline */
+}
+
+
+/* Styles from Fstyle.css (Forum specific) */
+#forum {
+  max-width: 700px; /* Increased max-width slightly */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+}
+
+.message {
+  border: 1px solid white;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: rgba(255,255,255,0.1); /* Slight background for messages */
+  border-radius: 4px;
+}
+
+.message strong {
+    color: #87CEFA; /* Light Sky Blue for username, example */
+}
+
+.reply { /* This class was defined but not used in the HTML provided */
+  margin-left: 20px;
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+}
+
+#postForm label {
+    display: block; /* Make labels take full width */
+    margin-top: 10px;
+}
+#postForm input[type="text"],
+#postForm textarea {
+    width: 100%; /* Make inputs take full width within the form */
+    margin-bottom: 10px;
+}
+#postForm button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#postForm button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Styles from Gstyle.css (Gallery and ContactUs specific) */
+.carousel { /* This was very basic in Gstyle.css, Bootstrap handles most of it */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* height: 400px; /* Let content define height or use Bootstrap classes */
+  margin-bottom: 20px; /* Add some space below carousels */
+}
+
+.carousel img { /* From Gstyle.css, for images inside the carousel */
+  object-fit: cover;
+  /* height: 800px; /* This might stretch images, better to let Bootstrap manage or use aspect ratios */
+  width: 100%; /* Ensure image is responsive within carousel item */
+}
+/* For controlling carousel image height more precisely if needed: */
+.carousel-item {
+  /* max-height: 600px; /* Example max height */
+  /* overflow: hidden; */
+}
+
+
+.Array-font { /* From Gstyle.css */
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  list-style-type: square; /* Example list style */
+  padding-left: 40px; /* Indent list */
+}
+.Array-font li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Form element styling from Gstyle.css (Contact Us form) */
+/* Some of these are similar to global input styles but might have different widths */
+form { /* General styling for forms if needed */
+    padding: 15px;
+}
+
+form input[type=text], /* Gstyle defined width: 50% */
+form input[type=email] { /* Added for consistency */
+  /* width: 50%; /* This can be too restrictive. Consider using Bootstrap grid or specific classes. */
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] { /* From Gstyle.css */
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; /* Added for consistency */
+}
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: #5a5a5a;
+}
+
+
+form textarea { /* Gstyle defined width: 45% */
+  /* width: 45%; /* Again, consider alternatives for responsiveness */
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8; /* This is a light background, might clash with dark theme */
+  color: #333; /* Text color for light background */
+  resize: vertical; /* Allow vertical resize, 'none' was in original */
+}
+
+/* Ensure specific form textareas (like contact form) have dark-theme compatible styles if global is light */
+#contactForm textarea, /* If you give your contact form an ID */
+textarea#story, textarea#messageForum /* For existing IDs */ {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+/* Responsive adjustments (examples) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .navbar a {
+        padding: 10px 8px; /* Smaller padding for navbar links */
+    }
+    #forum {
+        margin: 10px;
+        padding: 10px;
+    }
+    form input[type=text],
+    form input[type=email],
+    form textarea {
+        width: 90% !important; /* Make form elements wider on small screens */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
