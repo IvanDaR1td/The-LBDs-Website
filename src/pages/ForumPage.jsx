@@ -56,15 +56,7 @@ const ForumPage = () => {
         </form>
       </div>
       <br /><br /><br />
-      <iframe
-        style={{ borderRadius: '12px', display: 'block', margin: '0 auto' }} // Center the iframe
-        src="https://open.spotify.com/embed/playlist/6apkMbHsQf6Dp2l7KzBTyo?utm_source=generator&theme=0" // Replace with actual valid Spotify embed URL if this is a placeholder
-        width="80%" // Make it responsive
-        height="152"
-        frameBorder="0"
-        allowFullScreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3PJnL0qaMd3C71Am5X8wjM?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       ></iframe>
     </>
   );
