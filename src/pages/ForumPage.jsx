@@ -1,9 +1,8 @@
-// src/pages/ForumPage.jsx
 import React, { useState } from 'react';
 
 const ForumPage = () => {
   const [username, setUsername] = useState('');
-  const [messageText, setMessageText] = useState(''); // Renamed from 'message' to avoid conflict
+  const [messageText, setMessageText] = useState('');
   const [messages, setMessages] = useState([]);
 
   const handlePostMessage = () => {
@@ -23,30 +22,29 @@ const ForumPage = () => {
         <h1>JDMC Forum</h1>
         <p>You can have some chit chat for now, img upload will update later.</p>
       </div>
-      <header><br /></header> {/* Navbar handled by Layout */}
 
-      <div id="forum"> {/* Styles for #forum, .message will come from Fstyle.css content in main.css */}
+      <div id="forum">
         <div id="messageList">
           {messages.map((msg, index) => (
-            <div key={index} className="message"> {/* Ensure .message styles are in main.css */}
+            <div key={index} className="message">
               <strong>{msg.username}:</strong> {msg.text}
             </div>
           ))}
         </div>
 
-        <form id="postForm" onSubmit={(e) => e.preventDefault()}> {/* Prevent default form submission */}
-          <label htmlFor="usernameForum">Username:</label> {/* Use htmlFor */}
+        <form id="postForm" onSubmit={(e) => e.preventDefault()}>
+          <label htmlFor="usernameForum">Username:</label>
           <input
             type="text"
-            id="usernameForum" // Changed id to avoid conflict if 'username' is used elsewhere
+            id="usernameForum"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
 
-          <label htmlFor="messageForum">Message:</label> {/* Use htmlFor */}
+          <label htmlFor="messageForum">Message:</label>
           <textarea
-            id="messageForum" // Changed id
+            id="messageForum"
             rows="4"
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
@@ -56,7 +54,17 @@ const ForumPage = () => {
         </form>
       </div>
       <br /><br /><br />
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3PJnL0qaMd3C71Am5X8wjM?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe 
+        title="Spotify Playlist"
+        style={{ borderRadius: '12px' }}
+        src="https://open.spotify.com/embed/playlist/3PJnL0qaMd3C71Am5X8wjM?utm_source=generator" 
+        width="100%" 
+        height="152" 
+        frameBorder="0" 
+        allowFullScreen={true}
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"
+      ></iframe>
     </>
   );
 };
